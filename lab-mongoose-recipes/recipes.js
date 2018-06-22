@@ -9,6 +9,7 @@ mongoose.connect('mongodb://localhost/recipeApp') //===> is the database we are 
     console.error('Error connecting to mongo', err)
   });
 
+//CREATE A NEW MONGO SCHEMA WITH MONGOOSE
 const recipeSchema = new Schema({
   title : {type: String, required: true, unique:true},
   level : {type: String, enum: ['Easy Peasy','Amateur Chef','UltraPro Chef']},
@@ -22,8 +23,10 @@ const recipeSchema = new Schema({
 
 });
 
+//CREATE A NEW MONGOOSE MODEL USING THE SCHEMA CREATED BEFORE
 let Recipe = mongoose.model('Recipe', recipeSchema);
 
+//CREATE A NEW DOCUMENT USING DE MODEL AND SCHEMA BEFORE.
 Recipe.create({
   title: 'Arroz con Frijoles', 
   level: 'Easy Peasy', 
@@ -45,4 +48,31 @@ Recipe.insertMany(data)
   .catch((err) => {
     console.log('An error happened: ',err);
   });
+  
+function modifiedRecipe() {
+  Recipe.updateOne({title: 'Rigatoni alla Genovese'},{duration: 100})
+    .then((recipe) => {
+      console.log(recipe,' [ Updating success ]');
+    }).catch((err) => {
+      console.log('An error happened: ',err);
+    });
 
+  Recipe.deleteOne({title: 'Carrot Cake'})
+    .then((recipe) => {
+      console.log('The recipe: [',recipe,'] has been deleted.');
+    })
+    .catch((err) => {
+      console.log('An error happened: ',err);
+    });
+
+}
+
+function closeConect() {
+  mongoose.connection.close(() => {
+    console.log('Connection is closed.');
+  });
+}
+
+setTimeout(modifiedRecipe, 1000);
+setTimeout(closeConect, 1500);
+  
