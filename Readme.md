@@ -11,5 +11,5 @@ npm install hbs
 - quitar init de la carpeta copiada -
 rm -rf .git
 
-- quitar archivos añadidos por erro -
+- quitar archivos añadidos por error -
 git reset
