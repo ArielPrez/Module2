@@ -14,9 +14,9 @@ mongoose.Promise = Promise;
 mongoose
   .connect('mongodb://localhost/lab-express-cinema', {useMongoClient: true})
   .then(() => {
-    console.log('Connected to Mongo!')
+    console.log('Connected to Mongo!');
   }).catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.error('Error connecting to mongo', err);
   });
 
 const app_name = require('./package.json').name;
@@ -44,7 +44,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-hbs.registerPartials(__dirname + './views/partials');
+hbs.registerPartials(__dirname + '/views/partials'); /*con el __dirname ya esta indicando que en la carpeta del app.js (tu proyecto) busque '/views/partials', 
+si pones el punto le estas diciendo que salga de __dirname (que es la carpeta donde esta el app.js) y busque '/views/partials' 
+que no lo va a encontrar porque va a buscar la carpeta views en module2_OwnRepo. Antes tenias escrito './views/partials' con el . */
 
 
 // default value for title local

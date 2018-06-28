@@ -1,26 +1,27 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-const data = require('../bin/seeds.js');
+/*const data = require('../bin/seeds.js'); /*<-- esto no es necesario porque al seeds.js le pasas el modelo y ya toma esta informacion,
+ el modelo no necesita la informacion de seeds.js. En terminos simples ya el modelo fue a la casa de seeds, no es necesario que seeds vaya a la casa del modelo si el modelo ya esta alla */
 
+/*
+ lo que si debes hacer siempre es que si necesitas pasar informacion a otro archivo debes hacer el export, 
+como si avisaras que ya vas saliendo para el sitio y en el archivo que va a recibir la informacion, haces el require
+*/
 //CREATE A NEW MONGO SCHEMA WITH MONGOOSE
 const movieSchema = new Schema({
-  title : {type: String},
-  director : {type: String},
-  stars : {type: Array},
-  image : {type: String},
-  description : {type: String},
-  showtimes : {type: Array}
+  title :String,
+  director :String,
+  stars : [String],
+  image :String,
+  description : String,
+  showtimes:  [String]
 });
+
+// modifique los tipos en el esquema, no es necesario escribir 'type', una vez lo hicieron en la clase para evitar un problema con una cosa muy especifica, pero asi como lo puse funciona bien
+
 
 //CREATE A NEW MONGOOSE MODEL USING THE SCHEMA CREATED BEFORE
 let Movie = mongoose.model('Movie', movieSchema);
 
 module.exports = Movie;
 
-
-// title : "A Wrinkle in Time",
-// director: "Ava DuVernay",
-// stars: ["Storm Reid", "Oprah Winfrey", "Reese Witherspoon"],
-// image: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjQ5MTI3MV5BMl5BanBnXkFtZTgwMjQ2MTAyNDM@._V1_UX182_CR0,0,182,268_AL_.jpg",
-// description: "Following the discovery of a new form of space travel as well as Meg's father's disappearance, she, her brother, and her friend must join three magical beings - Mrs. Whatsit, Mrs. Who, and Mrs. Which - to travel across the universe to rescue him from a terrible evil.",
-// showtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]

@@ -1,12 +1,11 @@
-
 const mongoose = require("mongoose");
 const dbname = 'lab-express-cinema';
 mongoose.connect(`mongodb://localhost/${dbname}`);
 
-const movie = require('../models/movie');
-movie.collection.drop();
+const movieCollection = require('../models/movie');/* [movieCollection] ==> es el nombre que le das a la coleccion y es lo que debes exportar.*/
+movieCollection.collection.drop();
 
-const movies = [
+const moviesData = [ /*<--- [moviesData] es la variable que pasas en el primer parametro del movie.create*/
   {
   title : "A Wrinkle in Time",
   director: "Ava DuVernay",
@@ -73,12 +72,13 @@ const movies = [
   },
 ];
 
-// module.exports = movies;
+// module.exports = movieCollection;
 
-movie.create(movie,(err) => {
+
+movieCollection.create(moviesData,(err) => {
   if(err){
     throw err;
   }
   console.log("Connection Success");
-  mongoose.connection.close();
+  mongoose.connection.close(); /*<-- cierra la sesion del servidor en tu terminal una vez crea la data dentro de la base de datos*/
 });
