@@ -13,3 +13,6 @@ rm -rf .git
 
 - quitar archivos añadidos por error -
 git reset
+
+//////////////////////////////////////
+

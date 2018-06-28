@@ -1,3 +1,11 @@
+
+const mongoose = require("mongoose");
+const dbname = 'lab-express-cinema';
+mongoose.connect(`mongodb://localhost/${dbname}`);
+
+const movie = require('../models/movie');
+movie.collection.drop();
+
 const movies = [
   {
   title : "A Wrinkle in Time",
@@ -64,3 +72,13 @@ const movies = [
     howtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]
   },
 ];
+
+// module.exports = movies;
+
+movie.create(movie,(err) => {
+  if(err){
+    throw err;
+  }
+  console.log("Connection Success");
+  mongoose.connection.close();
+});

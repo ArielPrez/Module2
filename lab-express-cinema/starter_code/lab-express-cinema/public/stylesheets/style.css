@@ -1,0 +1,43 @@
+* {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+#index {
+  padding: 0px;
+  margin: 0px;
+  background-image: url("../images/film.png");
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+#title {
+  position: relative;
+  float: right;
+  width: 550px;
+  height: 350px;
+  margin: 50px 0 0 0px; }
+
+#title > span {
+  font-size: 90px;
+  font-weight: 600;
+  width: 450px;
+  color: #ffffff; }
+
+#b {
+  font-size: 140%;
+  margin: 20px 0px;
+  padding: 2.8% 5.8% 2.8% 5.8%;
+  border-radius: 40px;
+  color: #6aa1b4;
+  background-color: #ffffff; }
+
+.btn {
+  text-decoration-color: transparent;
+  text-decoration-style: none; }
+
+/*# sourceMappingURL=style.css.map */

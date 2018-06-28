@@ -1,5 +1,7 @@
 const express = require('express');
 const router  = express.Router();
+const movies = require('../bin/seeds.js');
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -7,6 +9,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/movies', (req, res, next) => {
-  res.render('movie-list');
+  movies.find().then(mov => {
+    res.render('movie-list',{mov});
+  }).catch((err) => {
+      console.log(err);
+    });  
 });
+
 module.exports = router;
