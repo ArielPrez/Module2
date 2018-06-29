@@ -40,4 +40,37 @@ a {
   text-decoration-color: transparent;
   text-decoration-style: none; }
 
+#movie-list {
+  margin: 0% 14% 0% 14%; }
+
+#movie-list > h2 {
+  margin: 2% 8%; }
+
+#movie-list > p {
+  margin: 2% 8%;
+  font-weight: bold; }
+
+#list {
+  margin: 40px 0px;
+  text-align: center; }
+
+#m {
+  display: inline-block;
+  margin: 0px 0px 35px 0px;
+  width: 250px;
+  text-align: center; }
+
+#m > img {
+  height: 200px; }
+
+#m > p {
+  margin: 3% 0%;
+  font-size: 12px;
+  font-weight: bold; }
+
+#m > span {
+  font-size: 10px;
+  clear: both;
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */
