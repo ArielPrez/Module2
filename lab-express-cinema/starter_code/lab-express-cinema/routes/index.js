@@ -28,17 +28,14 @@ router.get('/movies/:id', (req, res, next) => {
   }
 
   Movie.findOne({'_id':movieId})
-  .then(mov => {
-    if(!mov){
+  .then(movId => {
+    if(!movId){
       return res.status(404).render('not-found');
     }
-    console.log(mov);
-    res.render('singleMovie',mov);
+    console.log(movId);
+    res.render('movieDetails', movId);
   })
-  .catch(next)
-  // .catch((err)=>{
-  //   console.log(err);
-  // });
+  .catch(next);
 });
 
 module.exports = router;

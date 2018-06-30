@@ -47,8 +47,6 @@ a {
 .btn {
   text-decoration-color: transparent;
   text-decoration-style: none;
-  // text-decoration: none;
-  // color: #6aa1b4;
 }
 
 #movie-list{
@@ -85,4 +83,26 @@ a {
   font-size: 10px;
   clear: both;
   color: black; 
+}
+#movDetails > img{
+  position: relative;
+  float: left;
+  margin: 5% 0% 0% 5%;
+  width: 200px;
+  height: 300px;
+  box-shadow: 1px 1px 3px grey;
+}
+#details{
+  position: relative;
+  float: left;
+  margin: 2% 0% 0% 5%;
+  // border: 1px #00B7FF solid;
+  height: 350px;
+  width: 48%;
+}
+#details > a,h1,h2,h3,p{
+  margin: 3% 0%;
+}
+#details > ul{
+  margin: 3% 0% 0% 3%;
 }
