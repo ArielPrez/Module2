@@ -71,7 +71,8 @@ const moviesData = [ /*<--- [moviesData] es la variable que pasas en el primer p
     showtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]
   },
 ];
-
+//Red Sparrow tenia un error en [showtimes]
+// node bin/seeds.js
 // module.exports = movieCollection;
 
 
