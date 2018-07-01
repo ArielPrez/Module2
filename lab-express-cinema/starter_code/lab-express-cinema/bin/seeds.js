@@ -72,7 +72,7 @@ const moviesData = [ /*<--- [moviesData] es la variable que pasas en el primer p
   },
 ];
 //Red Sparrow tenia un error en [showtimes]
-// node bin/seeds.js
+// node bin/seeds.js  => Esto es para crear la base de datos la primera vez.
 // module.exports = movieCollection;
 
 
