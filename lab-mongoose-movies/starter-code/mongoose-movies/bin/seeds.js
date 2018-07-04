@@ -23,7 +23,7 @@ const celebrityData = [
 ];
 
 const mongoose = require("mongoose");
-const dbname = '';
+const dbname = 'mongoose-movies';
 mongoose.connect(`mongodb://localhost/${dbname}`);
 
 const celebrityCollection = require('../models/celebrity');
@@ -35,3 +35,4 @@ celebrityCollection.create(celebrityData, (err) => {
   mongoose.connection.close();
 });
 
+module.exports = celebrityCollection;
