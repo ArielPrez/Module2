@@ -1,5 +1,6 @@
 <h2>{{title}}</h2>
+<h2>Celebrities:</h2>
 
-{{#each}
-  <p> {{this.name}} </p>
-}
+{{#each cel}}
+  <p> <a href="/celebrities/{{this.id}}">{{this.name}}</a> </p>
+{{/each}}

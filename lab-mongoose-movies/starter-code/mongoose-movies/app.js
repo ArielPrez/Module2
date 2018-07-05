@@ -54,5 +54,7 @@ app.locals.title = 'Mongoose Movies';
 const index = require('./routes/index');
 app.use('/', index);
 
+const celebritiesRoute = require('./routes/celebrities');
+app.use('/', celebritiesRoute);
 
 module.exports = app;

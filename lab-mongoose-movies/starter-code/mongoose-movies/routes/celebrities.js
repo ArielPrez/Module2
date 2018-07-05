@@ -4,5 +4,10 @@ const Celebrity = require('../models/celebrity');
 
 router.get('/celebrities', (req, res, next) =>
 {
-  res.render('celebrities', {cel});
+  Celebrity.find().then(cel => {
+    res.render('celebrities/index', {cel});
+  })
+  .catch(next)
 });
+
+module.exports = router;
