@@ -26,7 +26,7 @@ const recipeSchema = new Schema({
 //CREATE A NEW MONGOOSE MODEL USING THE SCHEMA CREATED BEFORE
 let Recipe = mongoose.model('Recipe', recipeSchema);
 
-//CREATE A NEW DOCUMENT USING DE MODEL AND SCHEMA BEFORE.
+//CREATE A NEW DOCUMENT (JUST 1) USING DE MODEL AND SCHEMA BEFORE.
 Recipe.create({
   title: 'Arroz con Frijoles', 
   level: 'Easy Peasy', 
@@ -39,6 +39,7 @@ Recipe.create({
 }).then((recipe) => {console.log('The recipe is saved and its title is: ', recipe.title)})
 .catch((err) => {console.log('An error happened:', err)});
 
+//CREATE MANY DOCUMENTS THAT ARE SAVED IN THE VARIABLE [ data ]
 Recipe.insertMany(data)
   .then((recipes) => {
     recipes.forEach(recipes => {
@@ -49,6 +50,7 @@ Recipe.insertMany(data)
     console.log('An error happened: ',err);
   });
   
+//MODIFY THE DATABASE [ UPDATE,DELETE ]
 function modifiedRecipe() {
   Recipe.updateOne({title: 'Rigatoni alla Genovese'},{duration: 100})
     .then((recipe) => {
