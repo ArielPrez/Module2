@@ -65,6 +65,33 @@ router.post('/:id/delete', (req,res,next) => {
   .catch(next);
 });
 
+router.get('/:id/edit', (req,res,next) => {
+  let celId = req.params.id;
+  if(!req.params.id){
+    return res.status(404).render('not-found');
+  }
+  Celebrity.findById(celId)
+  .then(celeb => {
+    if(!celeb) return res.status(404).render('not-found');
+    res.render('celebrities/edit', {celeb});
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+});
+
+router.post('/:id/edit', (req,res,next) =>{
+  const { name, occupation, catchPhrase } = req.body;
+  let celId = req.params.id;
+  Celebrity.update( {_id: celId},{$set:{name,occupation,catchPhrase}},{new: true}) // <=====  ????
+  .then((celeb) => {
+    console.log(celeb.name);
+    res.redirect('/celebrities');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+});
 
 
 module.exports = router;
