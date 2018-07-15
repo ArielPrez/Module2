@@ -1,7 +1,3 @@
-// title - String
-// genre - String
-// plot - String
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

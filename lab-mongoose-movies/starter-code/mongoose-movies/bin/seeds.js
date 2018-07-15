@@ -94,15 +94,36 @@ const movieData = [
     plot: "Disgruntled Korean War veteran Walt Kowalski sets out to reform his neighbor, a Hmong teenager who tried to steal Kowalski's prized possession: a 1972 Gran Torino.",
   },
   {
-    title : "The Good, the Bad and the Ugly",
-    genre : "Western",
-    plot: "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+    title : "Top Gun",
+    genre : "Action, Drama, Romance",
+    plot: "As students at the United States Navy's elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom.",
   },
   {
-    title : "The Good, the Bad and the Ugly",
-    genre : "Western",
-    plot: "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+    title : "Mission: Impossible",
+    genre : "Action, Adventure, Thriller",
+    plot: "An American agent, under false suspicion of disloyalty, must discover and expose the real spy without the help of his organization.",
   },
+  {
+    title : "Minority Report",
+    genre : "Action, Adventure, Crime",
+    plot: "In a future where a special police unit is able to arrest murderers before they commit their crimes, an officer from that unit is himself accused of a future murder.",
+  },
+  {
+    title : "Valkyrie",
+    genre : "Drama, History, Thriller",
+    plot: "A dramatization of the 20 July assassination and political coup plot by desperate renegade German Army officers against Hitler during World War II.",
+  },
+  {
+    title : "Oblivion",
+    genre : "Action, Adventure, Mystery",
+    plot: "A veteran assigned to extract Earth's remaining resources begins to question what he knows about his mission and himself.",
+  },
+  {
+    title : "Edge of Tomorrow",
+    genre : "Action, Adventure, Sci-Fi",
+    plot: "A soldier fighting aliens gets to relive the same day over and over again, the day restarting every time he dies.",
+  },
+  
 ];
 
 const mongoose = require("mongoose");
